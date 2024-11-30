@@ -1,0 +1,4 @@
+{
+  "code": "// prettier-ignore\n{\n        console.log('hello world')\n}\n",
+  "nodes": []
+}

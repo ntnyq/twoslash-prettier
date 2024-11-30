@@ -1,0 +1,17 @@
+{
+  "code": "  console.log('hello world')\n",
+  "nodes": [
+    {
+      "type": "error",
+      "id": "prettier/replace",
+      "code": 0,
+      "text": "Replace `··console.log('hello·world')` with `console.log(\"hello·world\");`",
+      "start": 0,
+      "length": 28,
+      "level": "error",
+      "filename": "index.ts",
+      "line": 0,
+      "character": 0
+    }
+  ]
+}
