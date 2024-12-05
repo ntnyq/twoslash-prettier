@@ -70,7 +70,7 @@ import { useTemplateRef } from 'vue';
 const modelValue = ref('')
 const inputRef = useTemplateRef('inputRef'   )
 
-function handleChange() {
+function handleChange () {
   console.log(inputRef.value.value)
 }
 </script>
