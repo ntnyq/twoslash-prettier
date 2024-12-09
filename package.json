@@ -70,11 +70,11 @@
     "twoslash-protocol": "^0.2.12"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^3.9.0",
+    "@ntnyq/eslint-config": "^3.9.1",
     "@ntnyq/prettier-config": "^1.22.0",
     "@types/node": "^22.10.1",
     "@vitest/coverage-v8": "^2.1.8",
-    "bumpp": "^9.8.1",
+    "bumpp": "^9.9.0",
     "eslint": "^9.16.0",
     "husky": "^9.1.7",
     "nano-staged": "^0.8.0",
