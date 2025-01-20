@@ -34,6 +34,12 @@ const foobar = {
   'name': 'foobar'
 }
 
+// endOfLine: 'lf'
+```
+
+<!-- prettier-ignore -->
+```tsx [tsx.tsx] prettier-check
+
 // bracketSameLine: true
 const App = () => (
   <div 
@@ -43,8 +49,6 @@ const App = () => (
     <p>Hello World</p>
   </div>
 )
-
-// endOfLine: 'lf'
 ```
 
 <!-- prettier-ignore -->

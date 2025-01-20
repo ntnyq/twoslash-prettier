@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { useData } from 'vitepress'
+
 const { site } = useData()
 </script>
 

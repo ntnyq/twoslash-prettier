@@ -7,19 +7,17 @@ import type { TwoslashGenericResult } from 'twoslash-protocol'
 
 const fixtures = import.meta.glob<string>('./fixtures/**/*.*', { query: '?raw', import: 'default' })
 
-// A temporary list of regex to match with the path of the file to test
-const filters: RegExp[] = []
-
 const twoslash = createTwoslasher()
 
 Object.entries(fixtures).forEach(([path, fixture]) => {
   path = path.replace(/\\/g, '/')
+
   const expectThrows = path.includes('/throws/')
   const inExt = extname(path).slice(1)
   const outExt = expectThrows ? '.txt' : '.json'
   const outPath = path.replace('/fixtures/', '/results/').replace(/\.[^/.]+$/, outExt)
 
-  it.skipIf(filters.length && !filters.some(f => f.test(path)))(`${path}`, async () => {
+  it(`${path}`, async () => {
     let result: TwoslashGenericResult = undefined!
 
     try {
