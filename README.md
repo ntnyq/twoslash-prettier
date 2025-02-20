@@ -12,15 +12,15 @@
 
 ## Install
 
-```bash
+```shell
 npm install twoslash-prettier -D
 ```
 
-```bash
+```shell
 yarn add twoslash-prettier -D
 ```
 
-```bash
+```shell
 pnpm add twoslash-prettier -D
 ```
 

@@ -1,7 +1,10 @@
 import { join } from 'node:path'
 import { generateDifferences, showInvisibles } from 'prettier-linter-helpers'
 import { createSyncFn } from 'synckit'
-import { createPositionConverter, resolveNodePositions } from 'twoslash-protocol'
+import {
+  createPositionConverter,
+  resolveNodePositions,
+} from 'twoslash-protocol'
 import { dirWorkers } from './dir'
 import type { Config } from 'prettier'
 import type {
@@ -96,7 +99,9 @@ export function createTwoslasher(
   }
 
   return (code, file) => {
-    const filename = file?.includes('.') ? file : `index.${file ?? fallbackExtension}`
+    const filename = file?.includes('.')
+      ? file
+      : `index.${file ?? fallbackExtension}`
     const ext = filename.split('.').pop() ?? fallbackExtension
 
     const formatedCode = format(options.prettierCodeProcess?.(code) || code, {
@@ -108,7 +113,12 @@ export function createTwoslasher(
     const pc = createPositionConverter(code)
     const raws: NodeErrorWithoutPosition[] = differences.map(
       (difference): NodeErrorWithoutPosition => {
-        const { operation, offset, deleteText = '', insertText = '' } = difference
+        const {
+          operation,
+          offset,
+          deleteText = '',
+          insertText = '',
+        } = difference
 
         let text = ''
 
@@ -137,7 +147,9 @@ export function createTwoslasher(
 
     if (mergeMessages) {
       for (const current of raws) {
-        const existing = merged.find(r => r.start === current.start && r.length === current.length)
+        const existing = merged.find(
+          r => r.start === current.start && r.length === current.length,
+        )
         if (existing) {
           existing.text += `\n${current.text}`
           continue
