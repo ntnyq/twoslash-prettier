@@ -1,3 +1,5 @@
+// @ts-check
+
 const { runAsWorker } = require('synckit')
 
 /**
@@ -6,20 +8,33 @@ const { runAsWorker } = require('synckit')
 let prettier
 
 runAsWorker(
-  async function (
+  async (
     /**
      * @type {string}
      */
     source,
 
     /**
-     * @type {import('prettier').Options}
+     * @type {import('prettier').Options & { config?: string | URL }}
      */
-    options,
-  ) {
+    options = {},
+  ) => {
     if (!prettier) {
       prettier = await import('prettier')
     }
+
+    if (options.config) {
+      const configFile = await prettier.resolveConfigFile(options.config)
+
+      if (configFile) {
+        const resolvedOptions = await prettier.resolveConfig(configFile)
+
+        if (resolvedOptions) {
+          options = resolvedOptions
+        }
+      }
+    }
+
     return prettier.format(source, options)
   },
 )

@@ -5,7 +5,7 @@ import {
   createPositionConverter,
   resolveNodePositions,
 } from 'twoslash-protocol'
-import { dirWorkers } from './dir'
+import { DIR_WORKS } from './dir'
 import type { Config } from 'prettier'
 import type {
   NodeErrorWithoutPosition,
@@ -18,6 +18,11 @@ export interface CreateTwoslashPrettierOptions {
    * prettier config
    */
   prettierConfig?: Config
+
+  /**
+   * prettier config file
+   */
+  prettierConfigFile?: string | URL
 
   /**
    * Map of file extensions to prettier parsers
@@ -47,7 +52,10 @@ export interface CreateTwoslashPrettierOptions {
   mergeMessages?: boolean
 }
 
-let format: (code: string, config: Config) => string
+let formatViaPrettier: (
+  code: string,
+  config: Config & { config?: string | URL },
+) => string
 
 /**
  * File extension to prettier parser map
@@ -88,26 +96,34 @@ const defaultParserMap = {
 export function createTwoslasher(
   options: CreateTwoslashPrettierOptions = {},
 ): TwoslashGenericFunction {
-  const { mergeMessages = false, fallbackExtension = 'ts' } = options
+  const {
+    mergeMessages = false,
+    prettierParserMap = {},
+    fallbackExtension = 'ts',
+  } = options
   const parserMap = {
     ...defaultParserMap,
-    ...(options.prettierParserMap || {}),
+    ...prettierParserMap,
   }
 
-  if (!format) {
-    format = createSyncFn(join(dirWorkers, 'prettier.cjs')) as any
+  if (!formatViaPrettier) {
+    formatViaPrettier = createSyncFn(join(DIR_WORKS, 'prettier.cjs')) as any
   }
 
-  return (code, file) => {
-    const filename = file?.includes('.')
-      ? file
-      : `index.${file ?? fallbackExtension}`
+  return (code, fileNameOrExt) => {
+    const filename = fileNameOrExt?.includes('.')
+      ? fileNameOrExt
+      : `index.${fileNameOrExt ?? fallbackExtension}`
     const ext = filename.split('.').pop() ?? fallbackExtension
 
-    const formatedCode = format(options.prettierCodeProcess?.(code) || code, {
-      ...(options.prettierConfig || {}),
-      parser: parserMap[ext as keyof typeof parserMap],
-    })
+    const formatedCode = formatViaPrettier(
+      options.prettierCodeProcess?.(code) || code,
+      {
+        ...(options.prettierConfig || {}),
+        config: options.prettierConfigFile,
+        parser: parserMap[ext as keyof typeof parserMap],
+      },
+    )
     const differences = generateDifferences(code, formatedCode)
 
     const pc = createPositionConverter(code)

@@ -38,20 +38,6 @@ const foobar = {
 ```
 
 <!-- prettier-ignore -->
-```tsx [tsx.tsx] prettier-check
-
-// bracketSameLine: true
-const App = () => (
-  <div 
-    classname="text-red" 
-    name="hello world"
-  >
-    <p>Hello World</p>
-  </div>
-)
-```
-
-<!-- prettier-ignore -->
 ```css [css.css] prettier-check
 body{
   background-color: red;

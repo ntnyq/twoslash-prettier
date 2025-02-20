@@ -82,7 +82,9 @@ const shikiPlugin = await Shiki({
       explicitTrigger: /\bprettier-check\b/,
       // Pass the custom twoslasher
       twoslasher: createTwoslasherPrettier({
-        prettierConfig: {},
+        prettierConfig: {
+          semi: true,
+        },
       }),
       // Use hover to render errors instead of inserting a error line
       // Up to your preference
