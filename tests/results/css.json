@@ -1,0 +1,29 @@
+{
+  "code": "body{\n  background-color: red;\n}\n\n.text-red {\n    color: red;\n}\n\n.image {\n  background-image: url(\"/foo.png\");\n}\n",
+  "nodes": [
+    {
+      "type": "error",
+      "id": "prettier/insert",
+      "code": 0,
+      "text": "Insert `·`",
+      "start": 4,
+      "length": 4,
+      "level": "error",
+      "filename": "index.css",
+      "line": 0,
+      "character": 4
+    },
+    {
+      "type": "error",
+      "id": "prettier/delete",
+      "code": 0,
+      "text": "Delete `··`",
+      "start": 46,
+      "length": 48,
+      "level": "error",
+      "filename": "index.css",
+      "line": 5,
+      "character": 0
+    }
+  ]
+}

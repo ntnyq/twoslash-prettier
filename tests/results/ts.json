@@ -1,0 +1,101 @@
+{
+  "code": "// @ts-nocheck\n\n// singleQuote: true\nconsole.log(\"hello world\");\n\n// tabWidth: 2\n    console.log('hello world')\n\n// semi: false\nconst name = 'foobar';\n\n// printWidth: 80\nfoo(reallyLongArg(),omgSoManyParameters(),IShouldRefactorThis(),isThereSeriouslyAnotherOne());\n\n// arrowParens: 'avoid'\nconst isOdd = (n) => n % 2 === 1\n\n// trailingComma: 'none'\nconst arr = {\n  name: 'foobar',\n  age: 123,\n}\n\n// quoteProps: 'as-needed'\nconst foobar = {\n  'name': 'foobar'\n}\n\n// endOfLine: 'lf'\n",
+  "nodes": [
+    {
+      "type": "error",
+      "id": "prettier/replace",
+      "code": 0,
+      "text": "Replace `····console.log('hello·world')` with `console.log(\"hello·world\");`",
+      "start": 81,
+      "length": 111,
+      "level": "error",
+      "filename": "index.ts",
+      "line": 6,
+      "character": 0
+    },
+    {
+      "type": "error",
+      "id": "prettier/replace",
+      "code": 0,
+      "text": "Replace `'foobar'` with `\"foobar\"`",
+      "start": 141,
+      "length": 149,
+      "level": "error",
+      "filename": "index.ts",
+      "line": 9,
+      "character": 13
+    },
+    {
+      "type": "error",
+      "id": "prettier/replace",
+      "code": 0,
+      "text": "Replace `reallyLongArg(),omgSoManyParameters(),IShouldRefactorThis(),isThereSeriouslyAnotherOne()` with `⏎··reallyLongArg(),⏎··omgSoManyParameters(),⏎··IShouldRefactorThis(),⏎··isThereSeriouslyAnotherOne(),⏎`",
+      "start": 174,
+      "length": 262,
+      "level": "error",
+      "filename": "index.ts",
+      "line": 12,
+      "character": 4
+    },
+    {
+      "type": "error",
+      "id": "prettier/insert",
+      "code": 0,
+      "text": "Insert `;`",
+      "start": 322,
+      "length": 322,
+      "level": "error",
+      "filename": "index.ts",
+      "line": 15,
+      "character": 32
+    },
+    {
+      "type": "error",
+      "id": "prettier/replace",
+      "code": 0,
+      "text": "Replace `'foobar'` with `\"foobar\"`",
+      "start": 371,
+      "length": 379,
+      "level": "error",
+      "filename": "index.ts",
+      "line": 19,
+      "character": 8
+    },
+    {
+      "type": "error",
+      "id": "prettier/insert",
+      "code": 0,
+      "text": "Insert `;`",
+      "start": 394,
+      "length": 394,
+      "level": "error",
+      "filename": "index.ts",
+      "line": 21,
+      "character": 1
+    },
+    {
+      "type": "error",
+      "id": "prettier/replace",
+      "code": 0,
+      "text": "Replace `'name':·'foobar'` with `name:·\"foobar\",`",
+      "start": 442,
+      "length": 458,
+      "level": "error",
+      "filename": "index.ts",
+      "line": 25,
+      "character": 2
+    },
+    {
+      "type": "error",
+      "id": "prettier/insert",
+      "code": 0,
+      "text": "Insert `;`",
+      "start": 460,
+      "length": 460,
+      "level": "error",
+      "filename": "index.ts",
+      "line": 26,
+      "character": 1
+    }
+  ]
+}

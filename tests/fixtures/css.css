@@ -1,0 +1,11 @@
+body{
+  background-color: red;
+}
+
+.text-red {
+    color: red;
+}
+
+.image {
+  background-image: url("/foo.png");
+}

@@ -1,0 +1,77 @@
+{
+  "code": "<script lang=\"ts\" setup>\nimport { useTemplateRef } from 'vue';\n\nconst modelValue = ref('')\nconst inputRef = useTemplateRef('inputRef'   )\n\nfunction handleChange () {\n  console.log(inputRef.value.value)\n}\n</script>\n\n<template>\n  <ElInput @change=\"handleChange\" v-model.trim=\"modelValue\" ref=\"inputRef\" placeholder=\"Enter to search\" clearable />\n</template>\n",
+  "nodes": [
+    {
+      "type": "error",
+      "id": "prettier/replace",
+      "code": 0,
+      "text": "Replace `'vue'` with `\"vue\"`",
+      "start": 56,
+      "length": 61,
+      "level": "error",
+      "filename": "index.vue",
+      "line": 1,
+      "character": 31
+    },
+    {
+      "type": "error",
+      "id": "prettier/replace",
+      "code": 0,
+      "text": "Replace `'')` with `\"\");`",
+      "start": 87,
+      "length": 90,
+      "level": "error",
+      "filename": "index.vue",
+      "line": 3,
+      "character": 23
+    },
+    {
+      "type": "error",
+      "id": "prettier/replace",
+      "code": 0,
+      "text": "Replace `'inputRef'···)` with `\"inputRef\");`",
+      "start": 123,
+      "length": 137,
+      "level": "error",
+      "filename": "index.vue",
+      "line": 4,
+      "character": 32
+    },
+    {
+      "type": "error",
+      "id": "prettier/delete",
+      "code": 0,
+      "text": "Delete `·`",
+      "start": 160,
+      "length": 161,
+      "level": "error",
+      "filename": "index.vue",
+      "line": 6,
+      "character": 21
+    },
+    {
+      "type": "error",
+      "id": "prettier/insert",
+      "code": 0,
+      "text": "Insert `;`",
+      "start": 201,
+      "length": 201,
+      "level": "error",
+      "filename": "index.vue",
+      "line": 7,
+      "character": 35
+    },
+    {
+      "type": "error",
+      "id": "prettier/replace",
+      "code": 0,
+      "text": "Replace `·@change=\"handleChange\"·v-model.trim=\"modelValue\"·ref=\"inputRef\"·placeholder=\"Enter·to·search\"·clearable` with `⏎····@change=\"handleChange\"⏎····v-model.trim=\"modelValue\"⏎····ref=\"inputRef\"⏎····placeholder=\"Enter·to·search\"⏎····clearable⏎·`",
+      "start": 236,
+      "length": 340,
+      "level": "error",
+      "filename": "index.vue",
+      "line": 12,
+      "character": 10
+    }
+  ]
+}

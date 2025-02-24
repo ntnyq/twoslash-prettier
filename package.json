@@ -80,6 +80,7 @@
     "nano-staged": "^0.8.0",
     "npm-run-all2": "^7.0.2",
     "prettier": "^3.5.2",
+    "tinyglobby": "^0.2.12",
     "typescript": "^5.7.3",
     "unbuild": "^3.3.1",
     "vite": "catalog:",

@@ -1,0 +1,41 @@
+{
+  "code": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <title>Hello world</title>\n  </head>\n<body></body>\n</html>\n",
+  "nodes": [
+    {
+      "type": "error",
+      "id": "prettier/insert",
+      "code": 0,
+      "text": "Insert `·/`",
+      "start": 67,
+      "length": 67,
+      "level": "error",
+      "filename": "index.html",
+      "line": 3,
+      "character": 25
+    },
+    {
+      "type": "error",
+      "id": "prettier/replace",
+      "code": 0,
+      "text": "Replace `·name=\"viewport\"·content=\"width=device-width,·initial-scale=1.0,·viewport-fit=cover\"` with `⏎······name=\"viewport\"⏎······content=\"width=device-width,·initial-scale=1.0,·viewport-fit=cover\"⏎···`",
+      "start": 78,
+      "length": 162,
+      "level": "error",
+      "filename": "index.html",
+      "line": 4,
+      "character": 9
+    },
+    {
+      "type": "error",
+      "id": "prettier/insert",
+      "code": 0,
+      "text": "Insert `··`",
+      "start": 207,
+      "length": 207,
+      "level": "error",
+      "filename": "index.html",
+      "line": 7,
+      "character": 0
+    }
+  ]
+}

@@ -1,20 +1,20 @@
-/// <reference types="vite/client" />
-
+import { readFile } from 'node:fs/promises'
 import { extname } from 'node:path'
+import { globSync } from 'tinyglobby'
 import { expect, it } from 'vitest'
+import { resolve } from '../scripts/utils'
 import { createTwoslasher } from '../src'
 import type { TwoslashGenericResult } from 'twoslash-protocol'
 
-const fixtures = import.meta.glob<string>('./fixtures/**/*.*', {
-  query: '?raw',
-  import: 'default',
+const fixtures = globSync('*', {
+  cwd: resolve('tests/fixtures'),
+  onlyFiles: true,
+  absolute: true,
 })
 
 const twoslash = createTwoslasher()
 
-Object.entries(fixtures).forEach(([path, fixture]) => {
-  path = path.replace(/\\/g, '/')
-
+fixtures.forEach(path => {
   const expectThrows = path.includes('/throws/')
   const inExt = extname(path).slice(1)
   const outExt = expectThrows ? '.txt' : '.json'
@@ -26,7 +26,9 @@ Object.entries(fixtures).forEach(([path, fixture]) => {
     let result: TwoslashGenericResult = undefined!
 
     try {
-      result = twoslash((await fixture()).replace(/\r\n/g, '\n'), inExt)
+      const code = await readFile(path, 'utf-8')
+
+      result = twoslash(code.replace(/\r\n/g, '\n'), inExt)
     } catch (err: unknown) {
       if (expectThrows) {
         await expect((err as Error).message).toMatchFileSnapshot(outPath)
