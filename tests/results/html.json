@@ -1,5 +1,5 @@
 {
-  "code": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <title>Hello world</title>\n  </head>\n<body></body>\n</html>\n",
+  "code": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <title>Hello world</title>\n  </head>\n<body>\n  <div id=\"foo-bar-baz\"\n  class=\"bar-foo-baz\"\n  title=\"a sample title\"\n  data-foo=\"bar\"\n  data-bar=\"baz\">lorem ipsum</div>\n</body>\n</html>\n",
   "nodes": [
     {
       "type": "error",
@@ -35,6 +35,78 @@
       "level": "error",
       "filename": "index.html",
       "line": 7,
+      "character": 0
+    },
+    {
+      "type": "error",
+      "id": "prettier/replace",
+      "code": 0,
+      "text": "Replace `··<div` with `····<div⏎·····`",
+      "start": 214,
+      "length": 220,
+      "level": "error",
+      "filename": "index.html",
+      "line": 8,
+      "character": 0
+    },
+    {
+      "type": "error",
+      "id": "prettier/insert",
+      "code": 0,
+      "text": "Insert `····`",
+      "start": 238,
+      "length": 238,
+      "level": "error",
+      "filename": "index.html",
+      "line": 9,
+      "character": 0
+    },
+    {
+      "type": "error",
+      "id": "prettier/insert",
+      "code": 0,
+      "text": "Insert `····`",
+      "start": 262,
+      "length": 262,
+      "level": "error",
+      "filename": "index.html",
+      "line": 10,
+      "character": 2
+    },
+    {
+      "type": "error",
+      "id": "prettier/insert",
+      "code": 0,
+      "text": "Insert `····`",
+      "start": 285,
+      "length": 285,
+      "level": "error",
+      "filename": "index.html",
+      "line": 11,
+      "character": 0
+    },
+    {
+      "type": "error",
+      "id": "prettier/replace",
+      "code": 0,
+      "text": "Replace `data-bar=\"baz\">lorem·ipsum` with `····data-bar=\"baz\"⏎····>⏎······lorem·ipsum⏎····`",
+      "start": 304,
+      "length": 330,
+      "level": "error",
+      "filename": "index.html",
+      "line": 12,
+      "character": 2
+    },
+    {
+      "type": "error",
+      "id": "prettier/insert",
+      "code": 0,
+      "text": "Insert `··`",
+      "start": 337,
+      "length": 337,
+      "level": "error",
+      "filename": "index.html",
+      "line": 13,
       "character": 0
     }
   ]

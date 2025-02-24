@@ -1,0 +1,17 @@
+{
+  "code": "package: twoslash-prettier\ndescription:     Prettier-backed twoslash runner.\n",
+  "nodes": [
+    {
+      "type": "error",
+      "id": "prettier/delete",
+      "code": 0,
+      "text": "Delete `····`",
+      "start": 40,
+      "length": 44,
+      "level": "error",
+      "filename": "index.yaml",
+      "line": 1,
+      "character": 13
+    }
+  ]
+}

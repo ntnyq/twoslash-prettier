@@ -80,6 +80,12 @@ function handleChange () {
 }
 ```
 
+<!-- prettier-ignore  -->
+```yaml [yaml.yaml] prettier-check
+package: twoslash-prettier
+description:     Prettier-backed twoslash runner.
+```
+
 <!-- prettier-ignore -->
 ```html [html.html] prettier-check
 <!DOCTYPE html>
@@ -89,7 +95,13 @@ function handleChange () {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Hello world</title>
   </head>
-<body></body>
+<body>
+  <div id="foo-bar-baz"
+  class="bar-foo-baz"
+  title="a sample title"
+  data-foo="bar"
+  data-bar="baz">lorem ipsum</div>
+</body>
 </html>
 ```
 
