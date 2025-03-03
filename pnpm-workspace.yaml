@@ -1,9 +1,9 @@
 catalog:
-  '@shikijs/markdown-it': ^3.0.0
-  '@shikijs/transformers': ^3.0.0
-  '@shikijs/twoslash': ^3.0.0
-  '@shikijs/vitepress-twoslash': ^3.0.0
-  vite: ^6.1.1
+  '@shikijs/markdown-it': ^3.1.0
+  '@shikijs/transformers': ^3.1.0
+  '@shikijs/twoslash': ^3.1.0
+  '@shikijs/vitepress-twoslash': ^3.1.0
+  vite: ^6.2.0
 packages:
   - .
   - docs
