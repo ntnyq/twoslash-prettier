@@ -1,9 +1,19 @@
-catalog:
-  '@shikijs/markdown-it': ^3.1.0
-  '@shikijs/transformers': ^3.1.0
-  '@shikijs/twoslash': ^3.1.0
-  '@shikijs/vitepress-twoslash': ^3.1.0
-  vite: ^6.2.0
 packages:
   - .
   - docs
+catalog:
+  '@shikijs/markdown-it': ^3.2.1
+  '@shikijs/transformers': ^3.2.1
+  '@shikijs/twoslash': ^3.2.1
+  '@shikijs/vitepress-twoslash': ^3.2.1
+  vite: ^6.2.1
+overrides:
+  '@shikijs/core': ^3.2.1
+  '@shikijs/markdown-it': ^3.2.1
+  '@shikijs/rehype': ^3.2.1
+  '@shikijs/transformers': ^3.2.1
+  '@shikijs/types': ^3.2.1
+  esbuild: ^0.25.1
+  shiki: ^3.2.1
+onlyBuiltDependencies:
+  - esbuild

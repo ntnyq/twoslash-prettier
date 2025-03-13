@@ -1,5 +1,6 @@
-import { join } from 'node:path'
-import { generateDifferences, showInvisibles } from 'prettier-linter-helpers'
+import { generateDifferences } from 'generate-differences'
+import { join } from 'pathe'
+import { showInvisibles } from 'show-invisibles'
 import { createSyncFn } from 'synckit'
 import {
   createPositionConverter,
@@ -129,21 +130,20 @@ export function createTwoslasher(
     const pc = createPositionConverter(code)
     const raws: NodeErrorWithoutPosition[] = differences.map(
       (difference): NodeErrorWithoutPosition => {
-        const {
-          operation,
-          offset,
-          deleteText = '',
-          insertText = '',
-        } = difference
-
+        const { operation, offset } = difference
+        let deleteText = ''
         let text = ''
 
+        if ('deleteText' in difference && difference.deleteText) {
+          deleteText = difference.deleteText
+        }
+
         if (operation === 'insert') {
-          text = `Insert \`${showInvisibles(insertText)}\``
+          text = `Insert \`${showInvisibles(difference.insertText)}\``
         } else if (operation === 'delete') {
-          text = `Delete \`${showInvisibles(deleteText)}\``
+          text = `Delete \`${showInvisibles(difference.deleteText)}\``
         } else if (operation === 'replace') {
-          text = `Replace \`${showInvisibles(deleteText)}\` with \`${showInvisibles(insertText)}\``
+          text = `Replace \`${showInvisibles(difference.deleteText)}\` with \`${showInvisibles(difference.insertText)}\``
         }
 
         return {
