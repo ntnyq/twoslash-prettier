@@ -63,7 +63,7 @@
     "twoslash-protocol": "^0.3.1"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^4.0.1",
+    "@ntnyq/eslint-config": "^4.0.2",
     "@ntnyq/prettier-config": "^2.0.0",
     "@types/node": "^22.13.10",
     "@vitest/coverage-v8": "^3.0.8",
