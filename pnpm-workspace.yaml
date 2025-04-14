@@ -2,11 +2,11 @@ packages:
   - .
   - docs
 catalog:
-  '@shikijs/markdown-it': ^3.2.1
-  '@shikijs/transformers': ^3.2.1
-  '@shikijs/twoslash': ^3.2.1
-  '@shikijs/vitepress-twoslash': ^3.2.1
-  vite: ^6.2.5
+  '@shikijs/markdown-it': ^3.2.2
+  '@shikijs/transformers': ^3.2.2
+  '@shikijs/twoslash': ^3.2.2
+  '@shikijs/vitepress-twoslash': ^3.2.2
+  vite: ^6.2.6
 overrides:
   '@shikijs/core': ^3.2.1
   '@shikijs/markdown-it': ^3.2.1
