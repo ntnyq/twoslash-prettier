@@ -3,7 +3,6 @@
 [![CI](https://github.com/ntnyq/twoslash-prettier/workflows/CI/badge.svg)](https://github.com/ntnyq/twoslash-prettier/actions)
 [![NPM VERSION](https://img.shields.io/npm/v/twoslash-prettier.svg)](https://www.npmjs.com/package/twoslash-prettier)
 [![NPM DOWNLOADS](https://img.shields.io/npm/dy/twoslash-prettier.svg)](https://www.npmjs.com/package/twoslash-prettier)
-[![CODECOV](https://codecov.io/github/ntnyq/twoslash-prettier/branch/main/graph/badge.svg)](https://codecov.io/github/ntnyq/twoslash-prettier)
 [![LICENSE](https://img.shields.io/github/license/ntnyq/twoslash-prettier.svg)](https://github.com/ntnyq/twoslash-prettier/blob/main/LICENSE)
 
 > Prettier-backed twoslash runner.
