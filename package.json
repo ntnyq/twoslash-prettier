@@ -2,7 +2,7 @@
   "name": "twoslash-prettier",
   "type": "module",
   "version": "0.0.3",
-  "packageManager": "pnpm@10.13.1",
+  "packageManager": "pnpm@10.20.0",
   "description": "Prettier-backed twoslash runner.",
   "keywords": [
     "prettier",
@@ -41,9 +41,8 @@
     "lint": "eslint",
     "prepare": "husky",
     "prepublishOnly": "pnpm run build",
-    "release": "run-s release:check release:version release:publish",
+    "release": "run-s release:check release:version",
     "release:check": "run-s lint typecheck test",
-    "release:publish": "pnpm publish",
     "release:version": "bumpp",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
@@ -58,26 +57,26 @@
   },
   "dependencies": {
     "generate-differences": "^0.1.0",
-    "synckit": "^0.11.8",
-    "twoslash-protocol": "^0.3.2"
+    "synckit": "^0.11.11",
+    "twoslash-protocol": "^0.3.4"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^5.0.0",
+    "@ntnyq/eslint-config": "^5.7.0",
     "@ntnyq/prettier-config": "^3.0.1",
-    "@types/node": "^24.0.12",
-    "bumpp": "^10.2.0",
-    "eslint": "^9.30.1",
+    "@types/node": "^24.9.2",
+    "bumpp": "^10.3.1",
+    "eslint": "^9.39.0",
     "husky": "^9.1.7",
     "nano-staged": "^0.8.0",
     "npm-run-all2": "^8.0.4",
     "pathe": "^2.0.3",
     "prettier": "^3.6.2",
     "show-invisibles": "^0.0.1",
-    "tinyglobby": "^0.2.14",
-    "tsdown": "^0.12.9",
-    "typescript": "^5.8.3",
-    "vite": "^7.0.3",
-    "vitest": "^3.2.4"
+    "tinyglobby": "^0.2.15",
+    "tsdown": "^0.15.12",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.12",
+    "vitest": "^4.0.6"
   },
   "nano-staged": {
     "*.{js,ts,mjs,cjs,vue,md,yml,yaml,json}": "eslint --fix",

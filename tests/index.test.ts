@@ -1,5 +1,6 @@
 import { readFile } from 'node:fs/promises'
-import { extname } from 'node:path'
+import { extname, relative } from 'node:path'
+import process from 'node:process'
 import { globSync } from 'tinyglobby'
 import { expect, it } from 'vitest'
 import { resolve } from '../scripts/utils'
@@ -22,7 +23,7 @@ fixtures.forEach(path => {
     .replace('/fixtures/', '/results/')
     .replace(/\.[^/.]+$/, outExt)
 
-  it(`${path}`, async () => {
+  it(`${relative(process.cwd(), path)}`, async () => {
     let result: TwoslashGenericResult = undefined!
 
     try {
