@@ -58,13 +58,13 @@
   },
   "dependencies": {
     "generate-differences": "^0.1.0",
-    "synckit": "^0.11.8",
+    "synckit": "^0.11.11",
     "twoslash-protocol": "^0.3.2"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^5.0.0",
+    "@ntnyq/eslint-config": "^5.1.0",
     "@ntnyq/prettier-config": "^3.0.1",
-    "@types/node": "^24.0.13",
+    "@types/node": "^24.0.15",
     "bumpp": "^10.2.0",
     "eslint": "^9.31.0",
     "husky": "^9.1.7",
@@ -76,7 +76,7 @@
     "tinyglobby": "^0.2.14",
     "tsdown": "^0.12.9",
     "typescript": "^5.8.3",
-    "vite": "^7.0.4",
+    "vite": "^7.0.5",
     "vitest": "^3.2.4"
   },
   "nano-staged": {
