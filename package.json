@@ -59,14 +59,14 @@
   "dependencies": {
     "generate-differences": "^0.1.0",
     "synckit": "^0.11.11",
-    "twoslash-protocol": "^0.3.2"
+    "twoslash-protocol": "^0.3.3"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^5.1.0",
+    "@ntnyq/eslint-config": "^5.2.0",
     "@ntnyq/prettier-config": "^3.0.1",
-    "@types/node": "^24.0.15",
+    "@types/node": "^24.1.0",
     "bumpp": "^10.2.0",
-    "eslint": "^9.31.0",
+    "eslint": "^9.32.0",
     "husky": "^9.1.7",
     "nano-staged": "^0.8.0",
     "npm-run-all2": "^8.0.4",
@@ -74,9 +74,9 @@
     "prettier": "^3.6.2",
     "show-invisibles": "^0.0.1",
     "tinyglobby": "^0.2.14",
-    "tsdown": "^0.12.9",
+    "tsdown": "^0.13.0",
     "typescript": "^5.8.3",
-    "vite": "^7.0.5",
+    "vite": "^7.0.6",
     "vitest": "^3.2.4"
   },
   "nano-staged": {
