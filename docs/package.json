@@ -15,7 +15,7 @@
     "@shikijs/vitepress-twoslash": "^3.12.0",
     "twoslash": "^0.3.4",
     "twoslash-prettier": "workspace:*",
-    "unocss": "^66.4.2",
+    "unocss": "^66.5.0",
     "unplugin-vue-components": "^29.0.0",
     "vite": "^7.1.3",
     "vitepress": "^2.0.0-alpha.12",
