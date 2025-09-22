@@ -28,7 +28,7 @@ importers:
         specifier: ^3.0.1
         version: 3.0.1
       '@types/node':
-        specifier: ^24.3.1
+        specifier: ^24.4.0
         version: 24.5.0
       bumpp:
         specifier: ^10.2.3
@@ -58,7 +58,7 @@ importers:
         specifier: ^0.2.15
         version: 0.2.15
       tsdown:
-        specifier: ^0.15.0
+        specifier: ^0.15.1
         version: 0.15.1(typescript@5.9.2)
       typescript:
         specifier: ^5.9.2
@@ -3207,8 +3207,8 @@ snapshots:
   '@babel/template@7.27.2':
     dependencies:
       '@babel/code-frame': 7.27.1
-      '@babel/parser': 7.28.3
-      '@babel/types': 7.28.2
+      '@babel/parser': 7.28.4
+      '@babel/types': 7.28.4
 
   '@babel/traverse@7.27.7':
     dependencies:
@@ -4340,7 +4340,7 @@ snapshots:
 
   '@vue/compiler-core@3.5.20':
     dependencies:
-      '@babel/parser': 7.28.3
+      '@babel/parser': 7.28.4
       '@vue/shared': 3.5.20
       entities: 4.5.0
       estree-walker: 2.0.2
