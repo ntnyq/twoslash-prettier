@@ -15,7 +15,7 @@ runAsWorker(
     source,
 
     /**
-     * @type {import('prettier').Options & { config?: string | URL }}
+     * @type {import('prettier').Options & {config?: string|URL}}
      */
     options = {},
   ) => {
