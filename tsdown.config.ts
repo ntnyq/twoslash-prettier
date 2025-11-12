@@ -5,4 +5,5 @@ export default defineConfig({
   dts: true,
   entry: ['src/index.ts'],
   noExternal: ['pathe', 'show-invisibles'],
+  platform: 'node',
 })

@@ -29,6 +29,7 @@
     "esbuild",
     "iconify",
     "lcov",
+    "oxlint",
     "pkgr",
     "pnpm",
     "rehype",
