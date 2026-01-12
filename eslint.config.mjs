@@ -2,4 +2,10 @@
 
 import { defineESLintConfig } from '@ntnyq/eslint-config'
 
-export default defineESLintConfig()
+export default defineESLintConfig({
+  test: {
+    overridesVitestRules: {
+      'vitest/no-conditional-expect': 'off',
+    },
+  },
+})
