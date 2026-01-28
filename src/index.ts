@@ -108,7 +108,7 @@ export function createTwoslasher(
   }
 
   if (!formatViaPrettier) {
-    formatViaPrettier = createSyncFn(join(DIR_WORKS, 'prettier.cjs')) as any
+    formatViaPrettier = createSyncFn(join(DIR_WORKS, 'prettier.mjs'))
   }
 
   return (code, fileNameOrExt) => {

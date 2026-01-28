@@ -1,9 +1,9 @@
 // @ts-check
 
-const { runAsWorker } = require('synckit')
+import { runAsWorker } from 'synckit'
 
 /**
- * @type {import('prettier')}
+ * @type {typeof import('prettier')}
  */
 let prettier
 
