@@ -9,8 +9,8 @@ const DefaultThemeLayout = DefaultTheme.Layout
 
 function supportViewTransition() {
   return (
-    !!document.startViewTransition
-    && window.matchMedia('(prefers-reduced-motion: no-preference)').matches
+    !!document.startViewTransition &&
+    window.matchMedia('(prefers-reduced-motion: no-preference)').matches
   )
 }
 
@@ -37,6 +37,7 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
     { clipPath: isDark.value ? clipPath.reverse() : clipPath },
     {
       duration: 300,
+      fill: 'forwards',
       easing: 'ease-in',
       pseudoElement: `::view-transition-${isDark.value ? 'old' : 'new'}(root)`,
     },

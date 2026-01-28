@@ -4,6 +4,6 @@ export default defineConfig({
   clean: true,
   dts: true,
   entry: ['src/index.ts'],
-  noExternal: ['pathe', 'show-invisibles'],
+  inlineOnly: ['pathe', 'show-invisibles'],
   platform: 'node',
 })
