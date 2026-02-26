@@ -2,8 +2,12 @@
  * @file constants.ts
  */
 
-export const appTitle = 'twoslash-prettier'
-export const appUrl = `https://${appTitle}.ntnyq.com`
-export const appDescription = 'Prettier-backed twoslash runner.'
+export const USER_NAME = 'ntnyq'
 
-export const repoSlug = `ntnyq/${appTitle}`
+export const PACKAGE_NAME = 'twoslash-prettier'
+
+export const REPOSITORY_SLUG = `${USER_NAME}/${PACKAGE_NAME}`
+
+export const APP_TITLE = 'Twoslash Prettier'
+export const APP_URL = `https://${PACKAGE_NAME}.${USER_NAME}.com`
+export const APP_DESCRIPTION = 'Prettier-backed twoslash runner.'

@@ -24,7 +24,7 @@ fixtures.forEach(path => {
     .replace(/\.[^/.]+$/, outExt)
 
   it(`${relative(process.cwd(), path)}`, async () => {
-    let result: TwoslashGenericResult = undefined!
+    let result: TwoslashGenericResult
 
     try {
       const code = await readFile(path, 'utf-8')

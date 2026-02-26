@@ -4,22 +4,26 @@ import VueComponents from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
 import { groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 
-export default defineConfig({
-  optimizeDeps: {
-    exclude: ['vitepress'],
-  },
-  plugins: [
-    UnoCSS({
-      inspector: false,
-    }),
-    VueComponents({
-      dts: fileURLToPath(new URL('./components.d.ts', import.meta.url)),
-      extensions: ['vue', 'md'],
-      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-      dirs: [
-        fileURLToPath(new URL('./.vitepress/components', import.meta.url)),
-      ],
-    }),
-    groupIconVitePlugin(),
-  ],
+export default defineConfig(({ command }) => {
+  const isProduction = command === 'build'
+  return {
+    optimizeDeps: {
+      exclude: ['vitepress'],
+    },
+    plugins: [
+      UnoCSS({
+        inspector: false,
+      }),
+      VueComponents({
+        dts: fileURLToPath(new URL('./components.d.ts', import.meta.url)),
+        extensions: ['vue', 'md'],
+        include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+        syncMode: isProduction ? 'overwrite' : 'append',
+        dirs: [
+          fileURLToPath(new URL('./.vitepress/components', import.meta.url)),
+        ],
+      }),
+      groupIconVitePlugin(),
+    ],
+  }
 })

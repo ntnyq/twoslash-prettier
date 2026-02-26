@@ -5,11 +5,11 @@ import { defineConfig } from 'vitepress'
 import { groupIconMdPlugin } from 'vitepress-plugin-group-icons'
 import { head } from './config/head'
 import { getThemeConfig } from './config/theme'
-import { appDescription, appTitle } from './meta'
+import { APP_DESCRIPTION, APP_TITLE } from './meta'
 
 export default defineConfig({
-  title: appTitle,
-  description: appDescription,
+  title: APP_TITLE,
+  description: APP_DESCRIPTION,
   lastUpdated: true,
   cleanUrls: true,
   ignoreDeadLinks: true,
@@ -62,6 +62,7 @@ export default defineConfig({
             endOfLine: 'lf',
             trailingComma: 'none',
             experimentalTernaries: true,
+            experimentalOperatorPosition: 'end',
           },
           prettierCodeProcess(code) {
             // Remove trailing newline and presentational `⏎` characters

@@ -1,12 +1,12 @@
 import { version } from '../../../package.json'
-import { repoSlug } from '../meta'
+import { REPOSITORY_SLUG } from '../meta'
 import type { DefaultTheme } from 'vitepress'
 
 const VERSIONS: DefaultTheme.NavItemWithLink[] = [
   { text: `v${version} (current)`, link: '/' },
   {
     text: 'Release Notes',
-    link: `https://github.com/${repoSlug}/releases`,
+    link: `https://github.com/${REPOSITORY_SLUG}/releases`,
   },
 ]
 
@@ -21,12 +21,12 @@ export function getThemeConfig() {
 
     editLink: {
       text: 'Suggest changes to this page',
-      pattern: `https://github.com/${repoSlug}/edit/main/docs/:path`,
+      pattern: `https://github.com/${REPOSITORY_SLUG}/edit/main/docs/:path`,
     },
 
     socialLinks: [
       { icon: 'x', link: `https://twitter.com/ntnyq` },
-      { icon: 'github', link: `https://github.com/${repoSlug}` },
+      { icon: 'github', link: `https://github.com/${REPOSITORY_SLUG}` },
     ],
 
     nav: [

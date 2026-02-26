@@ -2,7 +2,7 @@
   "name": "twoslash-prettier",
   "type": "module",
   "version": "0.0.4",
-  "packageManager": "pnpm@10.28.2",
+  "packageManager": "pnpm@10.30.2",
   "description": "Prettier-backed twoslash runner.",
   "keywords": [
     "prettier",
@@ -63,26 +63,26 @@
     "twoslash-protocol": "^0.3.6"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^6.0.0-beta.6",
-    "@types/node": "^25.2.0",
-    "@typescript/native-preview": "^7.0.0-dev.20260201.1",
-    "bumpp": "^10.4.0",
-    "eslint": "^10.0.0",
+    "@ntnyq/eslint-config": "^6.0.0-beta.10",
+    "@types/node": "^25.3.1",
+    "@typescript/native-preview": "^7.0.0-dev.20260225.1",
+    "bumpp": "^10.4.1",
+    "eslint": "^10.0.2",
     "husky": "^9.1.7",
     "nano-staged": "^0.9.0",
     "npm-run-all2": "^8.0.4",
-    "oxfmt": "^0.27.0",
+    "oxfmt": "^0.35.0",
     "pathe": "^2.0.3",
     "prettier": "^3.8.1",
     "show-invisibles": "^0.0.2",
     "tinyglobby": "^0.2.15",
-    "tsdown": "^0.20.1",
+    "tsdown": "^0.20.3",
     "typescript": "^5.9.3",
-    "vite": "^8.0.0-beta.11",
+    "vite": "^8.0.0-beta.15",
     "vitest": "^4.0.18"
   },
   "nano-staged": {
-    "*.{js,ts,mjs,cjs,vue,md,yml,yaml,json}": "eslint --fix",
+    "*.{js,ts,mjs,tsx,vue,md,yml,yaml,json}": "eslint --fix",
     "*": "oxfmt --no-error-on-unmatched-pattern"
   }
 }
