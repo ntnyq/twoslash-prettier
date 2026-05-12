@@ -1,6 +1,8 @@
-import { readFile } from 'node:fs/promises'
+import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
+import { tmpdir } from 'node:os'
 import { extname, relative } from 'node:path'
 import process from 'node:process'
+import { join } from 'pathe'
 import { globSync } from 'tinyglobby'
 import { expect, it } from 'vitest'
 import { resolve } from '../scripts/utils'
@@ -45,4 +47,63 @@ fixtures.forEach(path => {
       await expect(JSON.stringify(result, null, 2)).toMatchFileSnapshot(outPath)
     }
   })
+})
+
+it('resolves prettier config file without losing explicit parser', async () => {
+  const cwd = await mkdtemp(join(tmpdir(), 'twoslash-prettier-'))
+  const configFile = join(cwd, '.prettierrc.json')
+
+  try {
+    await writeFile(
+      configFile,
+      JSON.stringify({
+        singleQuote: true,
+        semi: false,
+      }),
+      'utf-8',
+    )
+
+    const twoslash = createTwoslasher({
+      prettierConfigFile: configFile,
+    })
+    const result = twoslash('const message = "hello";\n', 'ts')
+    const errorTexts = result.nodes.flatMap(i => ('text' in i ? [i.text] : []))
+
+    expect(result.nodes.length).toBeGreaterThan(0)
+    expect(errorTexts.join('\n')).toContain('hello')
+  } finally {
+    await rm(cwd, {
+      recursive: true,
+      force: true,
+    })
+  }
+})
+
+it('resolves prettier config from cwd', async () => {
+  const cwd = await mkdtemp(join(tmpdir(), 'twoslash-prettier-'))
+  const configFile = join(cwd, '.prettierrc.json')
+
+  try {
+    await writeFile(
+      configFile,
+      JSON.stringify({
+        singleQuote: true,
+      }),
+      'utf-8',
+    )
+
+    const twoslash = createTwoslasher({
+      cwd,
+    })
+    const result = twoslash('const message = "hello"\n', 'ts')
+    const errorTexts = result.nodes.flatMap(i => ('text' in i ? [i.text] : []))
+
+    expect(result.nodes).toHaveLength(1)
+    expect(errorTexts[0]).toContain('Replace')
+  } finally {
+    await rm(cwd, {
+      recursive: true,
+      force: true,
+    })
+  }
 })

@@ -55,7 +55,7 @@ export interface CreateTwoslashPrettierOptions {
 
 let formatViaPrettier: (
   code: string,
-  config: Config & { config?: string | URL },
+  config: Config & { config?: string | URL; cwd?: string },
 ) => string
 
 /**
@@ -122,6 +122,8 @@ export function createTwoslasher(
       {
         ...(options.prettierConfig || {}),
         config: options.prettierConfigFile,
+        cwd: options.cwd,
+        filepath: options.cwd ? join(options.cwd, filename) : filename,
         parser: parserMap[ext as keyof typeof parserMap],
       },
     )
@@ -152,7 +154,7 @@ export function createTwoslasher(
           code: 0,
           text,
           start: offset,
-          length: offset + deleteText.length,
+          length: deleteText.length,
           level: 'error',
           filename,
         }

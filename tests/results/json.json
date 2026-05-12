@@ -7,7 +7,7 @@
       "code": 0,
       "text": "Replace `\"banana\",\"pear\",\"orange\",\"mango\",\"grape\",\"watermelon\",\"peach\",\"pineapple\",` with `⏎····\"banana\",⏎····\"pear\",⏎····\"orange\",⏎····\"mango\",⏎····\"grape\",⏎····\"watermelon\",⏎····\"peach\",⏎····\"pineapple\",⏎····`",
       "start": 48,
-      "length": 122,
+      "length": 74,
       "level": "error",
       "filename": "index.json",
       "line": 3,

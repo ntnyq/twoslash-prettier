@@ -15,26 +15,36 @@ runAsWorker(
     source,
 
     /**
-     * @type {import('prettier').Options & {config?: string | URL}}
+     * @type {import('prettier').Options & {config?: string | URL, cwd?: string}}
      */
     options = {},
   ) => {
     if (!prettier) {
       prettier = await import('prettier')
     }
+    /**
+     * @type {import('prettier').Options}
+     */
+    let resolvedOptions = {}
 
-    if (options.config) {
-      const configFile = await prettier.resolveConfigFile(options.config)
+    if (options.config || options.cwd) {
+      const resolveFrom = options.filepath ?? options.cwd ?? options.config
 
-      if (configFile) {
-        const resolvedOptions = await prettier.resolveConfig(configFile)
+      if (resolveFrom) {
+        const config = await prettier.resolveConfig(resolveFrom, {
+          config: options.config,
+        })
 
-        if (resolvedOptions) {
-          options = resolvedOptions
+        if (config) {
+          resolvedOptions = config
         }
       }
     }
 
-    return prettier.format(source, options)
+    const { config: _config, cwd: _cwd, ...runtimeOptions } = options
+    return prettier.format(source, {
+      ...resolvedOptions,
+      ...runtimeOptions,
+    })
   },
 )
