@@ -1,5 +1,5 @@
 import { generateDifferences } from 'generate-differences'
-import { join } from 'pathe'
+import { isAbsolute, join, resolve } from 'pathe'
 import { showInvisibles } from 'show-invisibles'
 import { createSyncFn } from 'synckit'
 import {
@@ -106,6 +106,12 @@ export function createTwoslasher(
     ...defaultParserMap,
     ...prettierParserMap,
   }
+  const prettierConfigFile =
+    options.cwd &&
+    typeof options.prettierConfigFile === 'string' &&
+    !isAbsolute(options.prettierConfigFile)
+      ? resolve(options.cwd, options.prettierConfigFile)
+      : options.prettierConfigFile
 
   if (!formatViaPrettier) {
     formatViaPrettier = createSyncFn(join(DIR_WORKS, 'prettier.mjs'))
@@ -118,10 +124,10 @@ export function createTwoslasher(
     const ext = filename.split('.').pop() ?? fallbackExtension
 
     const formatedCode = formatViaPrettier(
-      options.prettierCodeProcess?.(code) || code,
+      options.prettierCodeProcess?.(code) ?? code,
       {
         ...(options.prettierConfig || {}),
-        config: options.prettierConfigFile,
+        config: prettierConfigFile,
         cwd: options.cwd,
         filepath: options.cwd ? join(options.cwd, filename) : filename,
         parser: parserMap[ext as keyof typeof parserMap],

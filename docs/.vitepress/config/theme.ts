@@ -1,4 +1,4 @@
-import { version } from '../../../package.json'
+import { version } from '../../../package.json' with { type: 'json' }
 import { REPOSITORY_SLUG } from '../meta'
 import type { DefaultTheme } from 'vitepress'
 

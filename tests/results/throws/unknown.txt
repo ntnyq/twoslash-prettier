@@ -1,0 +1,1 @@
+No parser could be inferred for file "index.foo".

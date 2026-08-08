@@ -22,7 +22,7 @@
     "docs/.vitepress/**/*.ts",
     "docs/.vitepress/**/*.vue",
     "scripts/**/*.ts",
-    "workers/**/*.ts",
+    "workers/**/*.mjs",
     "tests/**/*.ts",
     "*.config.ts"
   ]

@@ -52,11 +52,6 @@
   "peerDependencies": {
     "prettier": "^3.0.0"
   },
-  "peerDependenciesMeta": {
-    "prettier": {
-      "optional": true
-    }
-  },
   "dependencies": {
     "generate-differences": "^0.1.1",
     "synckit": "^0.11.13",

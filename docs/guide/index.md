@@ -8,15 +8,15 @@ aside: false
 ::: code-group
 
 ```shell [npm]
-npm i twoslash-prettier -D
+npm i twoslash-prettier prettier -D
 ```
 
 ```shell [yarn]
-yarn add twoslash-prettier -D
+yarn add twoslash-prettier prettier -D
 ```
 
 ```shell [pnpm]
-pnpm add twoslash-prettier -D
+pnpm add twoslash-prettier prettier -D
 ```
 
 :::
