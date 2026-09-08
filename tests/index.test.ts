@@ -56,7 +56,7 @@ fixtures.forEach(path => {
   const outExt = expectThrows ? '.txt' : '.json'
   const outPath = path
     .replace('/fixtures/', '/results/')
-    .replace(/\.[^/.]+$/, outExt)
+    .replace(/\.[^/.]+$/, () => outExt)
 
   it(`${relative(process.cwd(), path)}`, async () => {
     let result: TwoslashGenericResult
@@ -65,22 +65,20 @@ fixtures.forEach(path => {
       const code = await readFile(path, 'utf-8')
 
       result = twoslash(code.replace(/\r\n/g, '\n'), inExt)
-    } catch (err: unknown) {
+    } catch (error: unknown) {
       if (expectThrows) {
         await expect(
-          `${(err as Error).message.trimEnd()}\n`,
+          `${(error as Error).message.trimEnd()}\n`,
         ).toMatchFileSnapshot(outPath)
         return
-      } else {
-        throw err
       }
+      throw error
     }
 
     if (expectThrows) {
       throw new Error('Expected to throw')
-    } else {
-      await expect(JSON.stringify(result, null, 2)).toMatchFileSnapshot(outPath)
     }
+    await expect(JSON.stringify(result, null, 2)).toMatchFileSnapshot(outPath)
   })
 })
 

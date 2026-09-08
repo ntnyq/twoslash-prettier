@@ -2,7 +2,7 @@ packages:
   - docs
 
 overrides:
-  esbuild: ^0.28.1
+  esbuild: ^0.28.2
 
 allowBuilds:
   esbuild: true
@@ -10,4 +10,4 @@ allowBuilds:
 
 ignoreWorkspaceRootCheck: true
 minimumReleaseAge: 0
-packageManagerStrict: false
+pmOnFail: warn

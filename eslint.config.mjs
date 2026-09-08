@@ -7,8 +7,10 @@ export default defineESLintConfig({
   oxfmt: true,
   prettier: false,
   test: {
-    overridesVitestRules: {
-      'vitest/no-conditional-expect': 'off',
+    vitest: {
+      overrides: {
+        'vitest/no-conditional-expect': 'off',
+      },
     },
   },
 })

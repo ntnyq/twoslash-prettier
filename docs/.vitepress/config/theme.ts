@@ -1,5 +1,5 @@
 import { version } from '../../../package.json' with { type: 'json' }
-import { REPOSITORY_SLUG } from '../meta'
+import { REPOSITORY_SLUG } from '../meta.ts'
 import type { DefaultTheme } from 'vitepress'
 
 const VERSIONS: DefaultTheme.NavItemWithLink[] = [

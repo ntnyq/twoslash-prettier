@@ -3,9 +3,9 @@ import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 import { createTwoslasher } from 'twoslash-prettier'
 import { defineConfig } from 'vitepress'
 import { groupIconMdPlugin } from 'vitepress-plugin-group-icons'
-import { head } from './config/head'
-import { getThemeConfig } from './config/theme'
-import { APP_DESCRIPTION, APP_TITLE } from './meta'
+import { head } from './config/head.ts'
+import { getThemeConfig } from './config/theme.ts'
+import { APP_DESCRIPTION, APP_TITLE } from './meta.ts'
 
 export default defineConfig({
   title: APP_TITLE,

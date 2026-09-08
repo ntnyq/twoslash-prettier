@@ -1,4 +1,4 @@
-import { APP_DESCRIPTION, APP_TITLE, APP_URL } from '../meta'
+import { APP_DESCRIPTION, APP_TITLE, APP_URL } from '../meta.ts'
 import type { HeadConfig } from 'vitepress'
 
 export const head: HeadConfig[] = [
