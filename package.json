@@ -2,7 +2,7 @@
   "name": "twoslash-prettier",
   "type": "module",
   "version": "0.0.4",
-  "packageManager": "pnpm@12.3.4",
+  "packageManager": "pnpm@12.4.1",
   "description": "Prettier-backed twoslash runner.",
   "keywords": [
     "prettier",
@@ -59,7 +59,7 @@
   },
   "devDependencies": {
     "@ntnyq/eslint-config": "^7.0.0-beta.19",
-    "@types/node": "^26.5.0",
+    "@types/node": "^26.5.1",
     "@typescript/native-preview": "^7.0.0-dev.20260707.2",
     "bumpp": "^12.3.0",
     "eslint": "^10.10.0",
@@ -73,7 +73,7 @@
     "tinyglobby": "^0.2.17",
     "tsdown": "^0.23.0",
     "typescript": "^6.0.3",
-    "vite": "^8.2.2",
+    "vite": "^8.3.0",
     "vitest": "^5.0.0"
   },
   "nano-staged": {
