@@ -2,7 +2,7 @@
   "name": "twoslash-prettier",
   "type": "module",
   "version": "0.0.4",
-  "packageManager": "pnpm@12.9.1",
+  "packageManager": "pnpm@12.12.1",
   "description": "Prettier-backed twoslash runner.",
   "keywords": [
     "prettier",
@@ -54,26 +54,26 @@
   },
   "dependencies": {
     "generate-differences": "^0.1.1",
-    "synckit": "^0.11.13",
+    "synckit": "^0.12.3",
     "twoslash-protocol": "^0.3.9"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^7.0.0-beta.22",
-    "@types/node": "^26.6.4",
+    "@ntnyq/eslint-config": "^7.0.0-beta.24",
+    "@types/node": "^26.6.5",
     "@typescript/native-preview": "^7.0.0-dev.20260707.2",
     "bumpp": "^12.3.0",
     "eslint": "^10.12.0",
     "husky": "^9.1.7",
     "nano-staged": "^1.0.2",
     "npm-run-all2": "^9.0.3",
-    "oxfmt": "^0.71.0",
+    "oxfmt": "^0.72.0",
     "pathe": "^2.0.3",
-    "prettier": "^3.9.9",
+    "prettier": "^3.9.10",
     "show-invisibles": "^0.0.2",
     "tinyglobby": "^0.2.17",
-    "tsdown": "^0.23.0",
+    "tsdown": "^0.23.1",
     "typescript": "^6.0.3",
-    "vite": "^8.3.2",
+    "vite": "^8.3.4",
     "vitest": "^5.0.3"
   },
   "nano-staged": {
