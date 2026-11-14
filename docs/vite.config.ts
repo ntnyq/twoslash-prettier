@@ -6,6 +6,7 @@ import { groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 
 export default defineConfig(({ command }) => {
   const isProduction = command === 'build'
+
   return {
     optimizeDeps: {
       exclude: ['vitepress'],

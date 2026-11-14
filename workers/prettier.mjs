@@ -22,6 +22,7 @@ runAsWorker(
     if (!prettier) {
       prettier = await import('prettier')
     }
+
     /**
      * @type {import('prettier').Options}
      */
@@ -42,6 +43,7 @@ runAsWorker(
     }
 
     const { config: _config, cwd: _cwd, ...runtimeOptions } = options
+
     return prettier.format(source, {
       ...resolvedOptions,
       ...runtimeOptions,
