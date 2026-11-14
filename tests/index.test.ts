@@ -70,14 +70,17 @@ fixtures.forEach(path => {
         await expect(
           `${(error as Error).message.trimEnd()}\n`,
         ).toMatchFileSnapshot(outPath)
+
         return
       }
+
       throw error
     }
 
     if (expectThrows) {
       throw new Error('Expected to throw')
     }
+
     await expect(JSON.stringify(result, null, 2)).toMatchFileSnapshot(outPath)
   })
 })

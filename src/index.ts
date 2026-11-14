@@ -174,10 +174,12 @@ export function createTwoslasher(
         const existing = merged.find(
           r => r.start === current.start && r.length === current.length,
         )
+
         if (existing) {
           existing.text += `\n${current.text}`
           continue
         }
+
         merged.push(current)
       }
     } else {
